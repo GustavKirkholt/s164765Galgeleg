@@ -11,5 +11,6 @@ public class NytSpil extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_nyt_spil);
 
+        //
     }
 }
