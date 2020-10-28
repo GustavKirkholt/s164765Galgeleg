@@ -35,7 +35,7 @@
         android:layout_marginTop="47dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Used lettes"
+        android:text="Used letters"
         app:layout_constraintStart_toStartOf="@+id/userInput"
         app:layout_constraintTop_toBottomOf="@+id/userInput" />
 
@@ -66,7 +66,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="49dp"
         android:ems="10"
-        android:inputType="textPersonName"
+        android:inputType="textShortMessage"
         android:text="Input"
         app:layout_constraintStart_toStartOf="@+id/wordToGuess"
         app:layout_constraintTop_toBottomOf="@+id/wordToGuess" />
