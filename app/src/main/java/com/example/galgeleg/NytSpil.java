@@ -25,7 +25,6 @@ public class NytSpil extends AppCompatActivity implements View.OnClickListener {
     Button guess;
     String ordet;
     ArrayList<String> usedLetters;
-    final String MESSAGE_WITH_LETTERS_TRIED = "Letters tried: ";
 
     //Nogle animationer
      Animation rotateAnimation;
@@ -49,16 +48,19 @@ public class NytSpil extends AppCompatActivity implements View.OnClickListener {
 
         guess.setOnClickListener(this);
 
-        ordet = logik.getOrdet();
+        ordet = logik.getSynligtOrd();
         TextView tv1 = findViewById(R.id.wordToGuess);
         tv1.setText(ordet);
 
-        usedLetters = logik.getBrugteBogstaver();
-        TextView tv2 = findViewById(R.id.lettersUsed);
-        tv2.setText((CharSequence) usedLetters);
+        //usedLetters = logik.getBrugteBogstaver();
+        //TextView tv2 = findViewById(R.id.lettersUsed);
+        //tv2.setText((CharSequence) usedLetters);
 
 
+    }
 
+    public void letterChecker(){
+        //Indsæt metode til at tjekke om bogstavet er korrekt indtastet
     }
 
     @Override
@@ -67,5 +69,9 @@ public class NytSpil extends AppCompatActivity implements View.OnClickListener {
 
         }
 
+    }
+
+    public void changeImage(){
+        //SwitchCase
     }
 }
