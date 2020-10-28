@@ -24,7 +24,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View ClickButton) {
 
         if (ClickButton == knap) {
-
             Intent i = new Intent(this, NytSpil.class);
             startActivity(i);
 

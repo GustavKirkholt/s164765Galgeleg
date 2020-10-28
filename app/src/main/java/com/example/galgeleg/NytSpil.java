@@ -8,6 +8,8 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import org.w3c.dom.Text;
+
 import java.util.ArrayList;
 
 public class NytSpil extends AppCompatActivity {
@@ -17,8 +19,9 @@ public class NytSpil extends AppCompatActivity {
     String wordToBeGuessed; //Dette er hele ordet
     String wordDisplayed; //Dette er order med underscores ved de bogstaver man endnu ikke har gættet
     char[] wordDisplayedCharArray; //Et character array med ordet, det er nogengange nemmer at arbejde med
-    ArrayList<String> listOfWords; // Alle mulige ord
+    ArrayList<String> muligeOrd = new ArrayList();  //Alle mulige ord
     EditText userInput;
+    TextView nameOfUser;
     TextView txLettersTried;
     String lettersTried;
     ImageView hangMan; //Galjen
@@ -34,11 +37,18 @@ public class NytSpil extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_nyt_spil);
 
-        listOfWords = new ArrayList<>(); // vil gerne have indsat metoden fra det udleverde her?
+        NytSpil nytspil = new NytSpil();
+        GalgeLogik logik = new GalgeLogik();
+
+        nameOfUser = findViewById(R.id.userName);
         txwordToBeGuessed = findViewById(R.id.wordToGuess);
         userInput = findViewById(R.id.userInput);
         txLettersTried = findViewById(R.id.lettersUsed);
         hangMan = findViewById(R.id.gallowStart);
+
+
+
+
 
 
     }

@@ -7,64 +7,31 @@
     tools:context=".NytSpil">
 
     <TextView
-        android:id="@+id/title_newgame"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="43dp"
-        android:text="TextView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
         android:id="@+id/wordToGuess"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:layout_marginEnd="170dp"
+        android:layout_marginTop="116dp"
         android:ems="10"
-        android:inputType="textPersonName"
+        android:inputType="none"
         android:text="Word"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/title_newgame" />
-
-    <EditText
-        android:id="@+id/lettersUsed"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="47dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Used letters"
-        app:layout_constraintStart_toStartOf="@+id/userInput"
-        app:layout_constraintTop_toBottomOf="@+id/userInput" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/gallowStart"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="9dp"
-        android:layout_marginTop="57dp"
-        app:layout_constraintStart_toStartOf="@+id/lettersUsed"
+        android:layout_marginTop="22dp"
+        app:layout_constraintEnd_toEndOf="@+id/saveCurrentGameState"
         app:layout_constraintTop_toBottomOf="@+id/lettersUsed"
         app:srcCompat="@drawable/galge" />
-
-    <Button
-        android:id="@+id/reset"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="3dp"
-        android:text="Reset"
-        app:layout_constraintBaseline_toBaselineOf="@+id/saveCurrentGameState"
-        app:layout_constraintEnd_toStartOf="@+id/saveCurrentGameState"
-        app:layout_constraintHorizontal_chainStyle="packed"
-        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/userInput"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="49dp"
+        android:layout_marginTop="21dp"
         android:ems="10"
         android:inputType="textShortMessage"
         android:text="Input"
@@ -75,11 +42,42 @@
         android:id="@+id/saveCurrentGameState"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="6dp"
-        android:layout_marginBottom="77dp"
+        android:layout_marginTop="22dp"
+        android:layout_marginEnd="7dp"
         android:text="Save"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/reset" />
+        app:layout_constraintStart_toEndOf="@+id/reset"
+        app:layout_constraintTop_toBottomOf="@+id/gallowStart" />
+
+    <Button
+        android:id="@+id/reset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Reset"
+        app:layout_constraintBaseline_toBaselineOf="@+id/saveCurrentGameState"
+        app:layout_constraintEnd_toStartOf="@+id/saveCurrentGameState"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/lettersUsed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="21dp"
+        android:ems="10"
+        android:inputType="none"
+        android:text="Used letters"
+        app:layout_constraintStart_toStartOf="@+id/userInput"
+        app:layout_constraintTop_toBottomOf="@+id/userInput" />
+
+    <TextView
+        android:id="@+id/userName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:text="'s Hangman Game"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
