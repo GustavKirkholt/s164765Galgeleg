@@ -23,6 +23,8 @@ public class NytSpil extends AppCompatActivity implements View.OnClickListener {
     TextView txLettersTried;
     ImageView hangMan; //Galjen
     Button guess;
+    String ordet;
+    ArrayList<String> usedLetters;
     final String MESSAGE_WITH_LETTERS_TRIED = "Letters tried: ";
 
     //Nogle animationer
@@ -46,6 +48,14 @@ public class NytSpil extends AppCompatActivity implements View.OnClickListener {
         hangMan = findViewById(R.id.gallowStart);
 
         guess.setOnClickListener(this);
+
+        ordet = logik.getOrdet();
+        TextView tv1 = findViewById(R.id.wordToGuess);
+        tv1.setText(ordet);
+
+        usedLetters = logik.getBrugteBogstaver();
+        TextView tv2 = findViewById(R.id.lettersUsed);
+        tv2.setText((CharSequence) usedLetters);
 
 
 

@@ -94,7 +94,7 @@ public class GalgeLogik {
         }
 
     }
-
+    
     public void gætBogstav(String bogstav) {
         if (bogstav.length() == 1) {
             System.out.println("Der gættes på bogstavet: " + bogstav);
