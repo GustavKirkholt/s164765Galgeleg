@@ -20,9 +20,9 @@
         android:id="@+id/vundet_return"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginBottom="295dp"
-        android:text="Tryk her for at vende tilbage til startsiden"
+        android:layout_marginBottom="286dp"
+        android:text="Tilbage til start"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
