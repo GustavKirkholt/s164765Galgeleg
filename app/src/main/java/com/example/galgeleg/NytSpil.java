@@ -38,7 +38,6 @@ public class NytSpil extends AppCompatActivity implements View.OnClickListener, 
         setContentView(R.layout.activity_nyt_spil);
 
         this.logik = new GalgeLogik();
-        this.logik.startNytSpil();
 
         guess = findViewById(R.id.guessLetter);
         nameOfUser = findViewById(R.id.userName);
@@ -78,7 +77,11 @@ public class NytSpil extends AppCompatActivity implements View.OnClickListener, 
     public void onClick(View ButtonClick) {
         if (ButtonClick == guess){
             this.logik.gætBogstav(userInput.getText().toString());
+            ordet = logik.getSynligtOrd();
+            TextView tv1 = findViewById(R.id.wordToGuess);
+            tv1.setText(ordet);
 
+            //TODO - INDSÆT OBERSERVER PATTERN
         }
 
     }
