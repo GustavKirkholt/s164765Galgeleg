@@ -10,5 +10,7 @@ public class DuHarTabt extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_du_har_tabt);
+
+        //TODO indsæt et "ordet var:" textview"
     }
 }

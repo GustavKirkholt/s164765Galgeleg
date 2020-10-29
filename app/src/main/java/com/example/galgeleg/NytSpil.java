@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.media.Image;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.animation.Animation;
@@ -26,7 +27,6 @@ public class NytSpil extends AppCompatActivity implements View.OnClickListener, 
     int forkerteBogstaver;
     Button guess;
     String ordet;
-    ArrayList<String> usedLetters;
     GalgeLogik logik;
 
     //Nogle animationer
@@ -55,7 +55,9 @@ public class NytSpil extends AppCompatActivity implements View.OnClickListener, 
         TextView tv1 = findViewById(R.id.wordToGuess);
         tv1.setText(ordet);
 
-        forkerteBogstaver = logik.getAntalForkerteBogstaver();
+        String username = PreferenceManager.getDefaultSharedPreferences(this).getString("Brugernavn", "defaultStringIfNothingFound");
+        TextView tv2 = findViewById(R.id.userName);
+        tv2.setText(username +"'s galgelegspil");
 
         //usedLetters = logik.getBrugteBogstaver();
         //TextView tv2 = findViewById(R.id.lettersUsed);
@@ -84,6 +86,7 @@ public class NytSpil extends AppCompatActivity implements View.OnClickListener, 
             ordet = logik.getSynligtOrd();
             TextView tv1 = findViewById(R.id.wordToGuess);
             tv1.setText(ordet);
+            this.changeImage();
 
             //TODO - INDSÆT OBERSERVER-PATTERN
         }
@@ -92,7 +95,9 @@ public class NytSpil extends AppCompatActivity implements View.OnClickListener, 
     }
 
     public void changeImage(){
+        forkerteBogstaver = logik.getAntalForkerteBogstaver();
         switch (forkerteBogstaver){
+
             case 1: forkerteBogstaver = 1;
                     ImageView iv = findViewById(R.id.gallowStart);
                     iv.setImageResource(R.drawable.forkert1);
