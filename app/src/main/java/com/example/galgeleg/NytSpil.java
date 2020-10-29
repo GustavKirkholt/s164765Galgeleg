@@ -2,6 +2,8 @@ package com.example.galgeleg;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
+import android.media.Image;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
@@ -21,11 +23,11 @@ public class NytSpil extends AppCompatActivity implements View.OnClickListener, 
     TextView nameOfUser;
     TextView txLettersTried;
     ImageView hangMan; //Galjen
+    int forkerteBogstaver;
     Button guess;
     String ordet;
     ArrayList<String> usedLetters;
     GalgeLogik logik;
-    String checkInput;
 
     //Nogle animationer
     Animation rotateAnimation;
@@ -52,6 +54,8 @@ public class NytSpil extends AppCompatActivity implements View.OnClickListener, 
         ordet = logik.getSynligtOrd();
         TextView tv1 = findViewById(R.id.wordToGuess);
         tv1.setText(ordet);
+
+        forkerteBogstaver = logik.getAntalForkerteBogstaver();
 
         //usedLetters = logik.getBrugteBogstaver();
         //TextView tv2 = findViewById(R.id.lettersUsed);
@@ -81,13 +85,41 @@ public class NytSpil extends AppCompatActivity implements View.OnClickListener, 
             TextView tv1 = findViewById(R.id.wordToGuess);
             tv1.setText(ordet);
 
-            //TODO - INDSÆT OBERSERVER PATTERN
+            //TODO - INDSÆT OBERSERVER-PATTERN
         }
+
 
     }
 
     public void changeImage(){
-        //SwitchCase
+        switch (forkerteBogstaver){
+            case 1: forkerteBogstaver = 1;
+                    ImageView iv = findViewById(R.id.gallowStart);
+                    iv.setImageResource(R.drawable.forkert1);
+                    break;
+            case 2: forkerteBogstaver = 2;
+                    ImageView iv2 = findViewById(R.id.gallowStart);
+                    iv2.setImageResource(R.drawable.forkert2);
+                    break;
+            case 3: forkerteBogstaver = 3;
+                    ImageView iv3 = findViewById(R.id.gallowStart);
+                    iv3.setImageResource(R.drawable.forkert3);
+                    break;
+            case 4: forkerteBogstaver = 4;
+                    ImageView iv4 = findViewById(R.id.gallowStart);
+                    iv4.setImageResource(R.drawable.forkert4);
+                    break;
+            case 5: forkerteBogstaver = 5;
+                    ImageView iv5 = findViewById(R.id.gallowStart);
+                    iv5.setImageResource(R.drawable.forkert5);
+                    break;
+            case 6: forkerteBogstaver = 6;
+                    ImageView iv6 = findViewById(R.id.gallowStart);
+                    iv6.setImageResource(R.drawable.forkert6);
+                    Intent i = new Intent(this, DuHarTabt.class);
+                    startActivity(i);
+                    break;
+        }
     }
 
     @Override
