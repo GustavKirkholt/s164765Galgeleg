@@ -3,6 +3,7 @@ package com.example.galgeleg;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.animation.Animation;
 import android.widget.Button;
@@ -10,11 +11,9 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
-
 import java.util.ArrayList;
 
-public class NytSpil extends AppCompatActivity implements View.OnClickListener {
+public class NytSpil extends AppCompatActivity implements View.OnClickListener, View.OnTouchListener {
 
     //Variabler
     TextView txwordToBeGuessed;
@@ -25,19 +24,21 @@ public class NytSpil extends AppCompatActivity implements View.OnClickListener {
     Button guess;
     String ordet;
     ArrayList<String> usedLetters;
+    GalgeLogik logik;
+    String checkInput;
 
     //Nogle animationer
-     Animation rotateAnimation;
-     Animation scaleAnimation;
-     Animation scaleAndRotateAnimation;
+    Animation rotateAnimation;
+    Animation scaleAnimation;
+    Animation scaleAndRotateAnimation;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_nyt_spil);
 
-        GalgeLogik logik = new GalgeLogik();
-        logik.startNytSpil();
+        this.logik = new GalgeLogik();
+        this.logik.startNytSpil();
 
         guess = findViewById(R.id.guessLetter);
         nameOfUser = findViewById(R.id.userName);
@@ -47,6 +48,7 @@ public class NytSpil extends AppCompatActivity implements View.OnClickListener {
         hangMan = findViewById(R.id.gallowStart);
 
         guess.setOnClickListener(this);
+        userInput.setOnTouchListener(this);
 
         ordet = logik.getSynligtOrd();
         TextView tv1 = findViewById(R.id.wordToGuess);
@@ -59,13 +61,23 @@ public class NytSpil extends AppCompatActivity implements View.OnClickListener {
 
     }
 
-    public void letterChecker(){
-        //Indsæt metode til at tjekke om bogstavet er korrekt indtastet
-    }
+    //public String letterChecker(){
+        //checkInput = userInput.getText().toString();
+        //if (checkInput.matches("[A-Za-z]{1}")) {
+        //    return checkInput;
+        //}
+        //else {
+          //  return null;
+       // }
+
+
+  //  }
+
 
     @Override
     public void onClick(View ButtonClick) {
         if (ButtonClick == guess){
+            this.logik.gætBogstav(userInput.getText().toString());
 
         }
 
@@ -73,5 +85,13 @@ public class NytSpil extends AppCompatActivity implements View.OnClickListener {
 
     public void changeImage(){
         //SwitchCase
+    }
+
+    @Override
+    public boolean onTouch(View v, MotionEvent event) {
+        if (v == userInput){
+            userInput.setText("");
+        }
+        return false;
     }
 }
