@@ -4,9 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:clickable="true"
+    android:elevation="40dp"
     tools:context=".ChooseUsername_frag">
 
-    <TextView
+    <EditText
         android:id="@+id/brugerNavn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
