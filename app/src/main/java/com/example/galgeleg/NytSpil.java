@@ -28,6 +28,7 @@ public class NytSpil extends AppCompatActivity implements View.OnClickListener, 
     Button guess;
     String ordet;
     GalgeLogik logik;
+    Boolean erSpilletVundet;
 
     //Nogle animationer
     Animation rotateAnimation;
@@ -59,6 +60,8 @@ public class NytSpil extends AppCompatActivity implements View.OnClickListener, 
         TextView tv2 = findViewById(R.id.userName);
         tv2.setText(username +"'s galgelegspil");
 
+        erSpilletVundet = logik.erSpilletVundet();
+
         //usedLetters = logik.getBrugteBogstaver();
         //TextView tv2 = findViewById(R.id.lettersUsed);
         //tv2.setText((CharSequence) usedLetters);
@@ -87,6 +90,12 @@ public class NytSpil extends AppCompatActivity implements View.OnClickListener, 
             TextView tv1 = findViewById(R.id.wordToGuess);
             tv1.setText(ordet);
             this.changeImage();
+
+            if(erSpilletVundet == true){
+                Intent i = new Intent(this, DuHarVundet.class);
+                startActivity(i);
+
+            }
 
             //TODO - INDSÆT OBERSERVER-PATTERN
         }
