@@ -94,6 +94,7 @@ public class NytSpil extends AppCompatActivity implements View.OnClickListener, 
     public void onClick(View ButtonClick) {
         if (ButtonClick == reset){
             this.logik.startNytSpil();
+
         }
         if (ButtonClick == guess){
             this.logik.gætBogstav(userInput.getText().toString());
@@ -102,7 +103,7 @@ public class NytSpil extends AppCompatActivity implements View.OnClickListener, 
             tv1.setText(ordetSynligt);
             this.changeImage();
 
-            if(erSpilletVundet == true){
+            if(!ordetSynligt.contains(" _ ")){
 
                 SharedPreferences preferencesbogstaver = PreferenceManager.getDefaultSharedPreferences(this);
                 preferencesbogstaver.edit().putInt("Score", this.forkerteBogstaver).apply();

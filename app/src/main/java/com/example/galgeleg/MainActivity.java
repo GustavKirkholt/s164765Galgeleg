@@ -33,6 +33,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     .replace(R.id.fragmentindhold, new ChooseUsername_frag())
                     .addToBackStack(null)
                     .commit();
+            knap.setVisibility(View.INVISIBLE);
+            knap2.setVisibility(View.INVISIBLE);
 
         } else if (ClickButton == knap2 ){
             Intent i = new Intent(this, HighScore.class);

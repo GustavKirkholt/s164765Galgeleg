@@ -4,9 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF"
+    android:background="#D3D3D3"
     android:clickable="true"
-    android:elevation="40dp"
+    android:elevation="30dp"
     tools:context=".ChooseUsername_frag">
 
     <EditText
