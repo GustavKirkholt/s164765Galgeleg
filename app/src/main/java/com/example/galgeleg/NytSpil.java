@@ -27,6 +27,7 @@ public class NytSpil extends AppCompatActivity implements View.OnClickListener, 
     ImageView hangMan; //Galjen
     int forkerteBogstaver;
     Button guess;
+    Button reset;
     String ordetSynligt;
     String heleOrdet;
     GalgeLogik logik;
@@ -46,6 +47,7 @@ public class NytSpil extends AppCompatActivity implements View.OnClickListener, 
         this.logik = new GalgeLogik();
 
         guess = findViewById(R.id.guessLetter);
+        reset = findViewById(R.id.reset);
         nameOfUser = findViewById(R.id.userName);
         txwordToBeGuessed = findViewById(R.id.wordToGuess);
         userInput = findViewById(R.id.userInput);
@@ -53,6 +55,7 @@ public class NytSpil extends AppCompatActivity implements View.OnClickListener, 
         hangMan = findViewById(R.id.gallowStart);
 
         guess.setOnClickListener(this);
+        reset.setOnClickListener(this);
         userInput.setOnTouchListener(this);
 
         ordetSynligt = logik.getSynligtOrd();
@@ -89,6 +92,9 @@ public class NytSpil extends AppCompatActivity implements View.OnClickListener, 
 
     @Override
     public void onClick(View ButtonClick) {
+        if (ButtonClick == reset){
+            this.logik.startNytSpil();
+        }
         if (ButtonClick == guess){
             this.logik.gætBogstav(userInput.getText().toString());
             ordetSynligt = logik.getSynligtOrd();
