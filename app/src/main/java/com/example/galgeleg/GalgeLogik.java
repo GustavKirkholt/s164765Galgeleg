@@ -88,7 +88,7 @@ public class GalgeLogik {
             if (this.brugteBogstaver.contains(bogstav)) {
                 this.synligtOrd = this.synligtOrd + bogstav;
             } else {
-                this.synligtOrd = this.synligtOrd + "*";
+                this.synligtOrd = this.synligtOrd + " _ ";
                 this.spilletErVundet = false;
             }
         }
