@@ -17,7 +17,7 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-public class NytSpil extends AppCompatActivity implements View.OnClickListener, View.OnTouchListener {
+public class NytSpil extends AppCompatActivity implements View.OnClickListener, View.OnTouchListener, Observer {
 
     //Variabler
     TextView txwordToBeGuessed;
@@ -160,5 +160,15 @@ public class NytSpil extends AppCompatActivity implements View.OnClickListener, 
             userInput.setText("");
         }
         return false;
+    }
+
+    @Override
+    public void update() {
+
+    }
+
+    @Override
+    public void setSubject(Subject sub) {
+
     }
 }
