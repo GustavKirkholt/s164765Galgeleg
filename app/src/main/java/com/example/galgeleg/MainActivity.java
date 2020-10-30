@@ -10,6 +10,7 @@ import android.widget.Button;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     Button knap;
+    Button knap2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,6 +18,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
 
         knap = findViewById(R.id.knap);
+        knap2 = findViewById(R.id.highScoreknap);
+
+        knap2.setOnClickListener(this);
         knap.setOnClickListener(this);
     }
 
@@ -30,6 +34,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     .addToBackStack(null)
                     .commit();
 
+        } else if (ClickButton == knap2 ){
+            Intent i = new Intent(this, HighScore.class);
+            startActivity(i);
         }
     }
 }
