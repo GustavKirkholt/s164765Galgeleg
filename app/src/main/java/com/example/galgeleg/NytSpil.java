@@ -3,6 +3,7 @@ package com.example.galgeleg;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.media.Image;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -26,9 +27,11 @@ public class NytSpil extends AppCompatActivity implements View.OnClickListener, 
     ImageView hangMan; //Galjen
     int forkerteBogstaver;
     Button guess;
-    String ordet;
+    String ordetSynligt;
+    String heleOrdet;
     GalgeLogik logik;
     Boolean erSpilletVundet;
+
 
     //Nogle animationer
     Animation rotateAnimation;
@@ -52,9 +55,11 @@ public class NytSpil extends AppCompatActivity implements View.OnClickListener, 
         guess.setOnClickListener(this);
         userInput.setOnTouchListener(this);
 
-        ordet = logik.getSynligtOrd();
+        ordetSynligt = logik.getSynligtOrd();
         TextView tv1 = findViewById(R.id.wordToGuess);
-        tv1.setText(ordet);
+        tv1.setText(ordetSynligt);
+
+        heleOrdet = logik.getOrdet();
 
         String username = PreferenceManager.getDefaultSharedPreferences(this).getString("Brugernavn", "defaultStringIfNothingFound");
         TextView tv2 = findViewById(R.id.userName);
@@ -86,12 +91,19 @@ public class NytSpil extends AppCompatActivity implements View.OnClickListener, 
     public void onClick(View ButtonClick) {
         if (ButtonClick == guess){
             this.logik.gætBogstav(userInput.getText().toString());
-            ordet = logik.getSynligtOrd();
+            ordetSynligt = logik.getSynligtOrd();
             TextView tv1 = findViewById(R.id.wordToGuess);
-            tv1.setText(ordet);
+            tv1.setText(ordetSynligt);
             this.changeImage();
 
             if(erSpilletVundet == true){
+
+                SharedPreferences preferencesbogstaver = PreferenceManager.getDefaultSharedPreferences(this);
+                preferencesbogstaver.edit().putInt("Score", this.forkerteBogstaver).apply();
+
+                SharedPreferences preferencesord = PreferenceManager.getDefaultSharedPreferences(this);
+                preferencesord.edit().putString("Ordet", this.heleOrdet).apply();
+
                 Intent i = new Intent(this, DuHarVundet.class);
                 startActivity(i);
 
