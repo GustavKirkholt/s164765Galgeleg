@@ -13,19 +13,34 @@
         android:id="@+id/brugerNavn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="142dp"
-        android:layout_marginTop="198dp"
-        android:text="Skriv dit navn her"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginTop="14dp"
+        android:layout_marginEnd="39dp"
+        android:ems="10"
+        android:inputType="textShortMessage"
+        app:layout_constraintEnd_toEndOf="@+id/besked"
+        app:layout_constraintTop_toBottomOf="@+id/besked" />
 
     <Button
         android:id="@+id/saveContinue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="19dp"
         android:text="Gem og forsæt"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/brugerNavn"
+        app:layout_constraintTop_toBottomOf="@+id/brugerNavn" />
+
+    <TextView
+        android:id="@+id/besked"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="218dp"
+        android:text="Indtast dit navn brugernavn her:"
+        android:textAlignment="viewStart"
+        android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

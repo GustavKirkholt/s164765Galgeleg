@@ -14,9 +14,10 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 
-public class ChooseUsername_frag extends Fragment implements View.OnClickListener, View.OnTouchListener {
+public class ChooseUsername_frag extends Fragment implements View.OnClickListener{
     private View rod;
     Button knap;
+
     EditText brugernavn;
 
     @Override
@@ -41,11 +42,4 @@ public class ChooseUsername_frag extends Fragment implements View.OnClickListene
         startActivity(intent);
     }
 
-    @Override
-    public boolean onTouch(View v, MotionEvent event) {
-        if (v == brugernavn) {
-            brugernavn.setText("");
-        }
-        return false;
-    }
 }

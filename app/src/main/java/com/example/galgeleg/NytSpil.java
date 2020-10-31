@@ -92,10 +92,6 @@ public class NytSpil extends AppCompatActivity implements View.OnClickListener, 
 
     @Override
     public void onClick(View ButtonClick) {
-        if (ButtonClick == reset){
-            this.logik.startNytSpil();
-
-        }
         if (ButtonClick == guess){
             this.logik.gætBogstav(userInput.getText().toString());
             ordetSynligt = logik.getSynligtOrd();
@@ -114,6 +110,9 @@ public class NytSpil extends AppCompatActivity implements View.OnClickListener, 
                 Intent i = new Intent(this, DuHarVundet.class);
                 startActivity(i);
 
+            }
+            if (ButtonClick == reset){
+                this.logik = new GalgeLogik();
             }
 
             //TODO - INDSÆT OBERSERVER-PATTERN
