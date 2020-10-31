@@ -12,12 +12,11 @@
         android:id="@+id/wordToGuess"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="22dp"
         android:ems="10"
         android:inputType="none"
         android:text="Word"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/userName"
         app:layout_constraintTop_toBottomOf="@+id/userName" />
 
     <ImageView
@@ -25,7 +24,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="6dp"
-        android:layout_marginTop="17dp"
+        android:layout_marginTop="18dp"
         app:layout_constraintStart_toStartOf="@+id/lettersUsed"
         app:layout_constraintTop_toBottomOf="@+id/lettersUsed"
         app:srcCompat="@drawable/galge" />
@@ -34,7 +33,7 @@
         android:id="@+id/userInput"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="25dp"
         android:ems="10"
         android:inputType="textShortMessage"
         android:text="input"
@@ -45,10 +44,10 @@
         android:id="@+id/reset"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
         android:text="Reset"
-        app:layout_constraintStart_toStartOf="@+id/guessLetter"
-        app:layout_constraintTop_toBottomOf="@+id/guessLetter" />
+        app:layout_constraintBaseline_toBaselineOf="@+id/guessLetter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/guessLetter" />
 
     <TextView
         android:id="@+id/lettersUsed"
@@ -65,20 +64,25 @@
         android:id="@+id/userName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:layout_marginEnd="15dp"
+        android:layout_marginTop="32dp"
         android:text="'s Hangman Game"
-        app:layout_constraintEnd_toEndOf="@+id/wordToGuess"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/guessLetter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="40dp"
+        android:layout_marginStart="22dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="9dp"
         android:text="Gæt"
-        app:layout_constraintEnd_toEndOf="@+id/gallowStart"
+        app:layout_constraintEnd_toStartOf="@+id/reset"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/gallowStart" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

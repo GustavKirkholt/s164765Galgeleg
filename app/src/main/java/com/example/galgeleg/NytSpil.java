@@ -68,38 +68,17 @@ public class NytSpil extends AppCompatActivity implements View.OnClickListener, 
         TextView tv2 = findViewById(R.id.userName);
         tv2.setText(username +"'s galgelegspil");
 
-        erSpilletVundet = logik.erSpilletVundet();
-
-        //usedLetters = logik.getBrugteBogstaver();
-        //TextView tv2 = findViewById(R.id.lettersUsed);
-        //tv2.setText((CharSequence) usedLetters);
-
-
     }
-
-    //public String letterChecker(){
-        //checkInput = userInput.getText().toString();
-        //if (checkInput.matches("[A-Za-z]{1}")) {
-        //    return checkInput;
-        //}
-        //else {
-          //  return null;
-       // }
-
-
-  //  }
-
-
     @Override
     public void onClick(View ButtonClick) {
-        if (ButtonClick == guess){
+        if (ButtonClick == guess) {
             this.logik.gætBogstav(userInput.getText().toString());
             ordetSynligt = logik.getSynligtOrd();
             TextView tv1 = findViewById(R.id.wordToGuess);
             tv1.setText(ordetSynligt);
             this.changeImage();
 
-            if(!ordetSynligt.contains(" _ ")){
+            if (!ordetSynligt.contains(" _ ")) {
 
                 SharedPreferences preferencesbogstaver = PreferenceManager.getDefaultSharedPreferences(this);
                 preferencesbogstaver.edit().putInt("Score", this.forkerteBogstaver).apply();
@@ -111,14 +90,15 @@ public class NytSpil extends AppCompatActivity implements View.OnClickListener, 
                 startActivity(i);
 
             }
-            if (ButtonClick == reset){
-                this.logik = new GalgeLogik();
-            }
+
 
             //TODO - INDSÆT OBERSERVER-PATTERN
         }
+        if (ButtonClick == reset) {
 
+            recreate();
 
+        }
     }
 
     public void changeImage(){
