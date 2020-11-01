@@ -19,9 +19,15 @@ public class GalgeLogik {
     private boolean sidsteBogstavVarKorrekt;
     private boolean spilletErVundet;
     private boolean spilletErTabt;
+    public String valgtSværhed;
 
     public GalgeLogik() {
         OrdFactory ordFactory = new OrdFactory();
+        ord sværtOrd = ordFactory.lavOrd("Svært");
+        ord nemtOrd = ordFactory.lavOrd("Nemt");
+        this.muligeOrd.add(nemtOrd);
+        this.muligeOrd.add(sværtOrd);
+        this.muligeOrd.add("");
         this.muligeOrd.add("bil");
         this.muligeOrd.add("computer");
         this.muligeOrd.add("programmering");
@@ -33,6 +39,9 @@ public class GalgeLogik {
         this.muligeOrd.add("tyve");
 
         this.startNytSpil();
+    }
+
+    public static void valgtSværhed(String nemt) {
     }
 
     public ArrayList<String> getBrugteBogstaver() {

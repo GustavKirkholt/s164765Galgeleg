@@ -38,7 +38,7 @@ public class ChooseUsername_frag extends Fragment implements View.OnClickListene
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getContext());
         preferences.edit().putString("Brugernavn", this.brugernavn.getText().toString()).apply();
 
-        Intent intent = new Intent(getActivity(), NytSpil.class);
+        Intent intent = new Intent(getActivity(), ChooseWordType.class);
         startActivity(intent);
     }
 
