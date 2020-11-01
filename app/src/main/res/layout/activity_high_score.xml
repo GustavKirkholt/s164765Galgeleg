@@ -13,4 +13,26 @@
         android:text="HIGHSCORE"
         tools:layout_editor_absoluteX="167dp"
         tools:layout_editor_absoluteY="80dp" />
+
+    <TextView
+        android:id="@+id/listeelementUsername"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        tools:layout_editor_absoluteX="167dp"
+        tools:layout_editor_absoluteY="148dp" />
+
+    <TextView
+        android:id="@+id/listeelementOrd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        tools:layout_editor_absoluteX="167dp"
+        tools:layout_editor_absoluteY="187dp" />
+
+    <TextView
+        android:id="@+id/listeelementScore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView" />
 </androidx.constraintlayout.widget.ConstraintLayout>

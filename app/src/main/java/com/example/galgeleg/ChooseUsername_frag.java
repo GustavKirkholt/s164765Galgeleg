@@ -1,4 +1,4 @@
-package com.example.galgeleg;
+package com.example.views.galgeleg;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.app.Fragment;
@@ -38,7 +38,7 @@ public class ChooseUsername_frag extends Fragment implements View.OnClickListene
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getContext());
         preferences.edit().putString("Brugernavn", this.brugernavn.getText().toString()).apply();
 
-        Intent intent = new Intent(getActivity(), ChooseWordType.class);
+        Intent intent = new Intent(getActivity(), com.example.galgeleg.ChooseWordType.class);
         startActivity(intent);
     }
 
