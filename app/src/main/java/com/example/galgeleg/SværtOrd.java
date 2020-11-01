@@ -16,9 +16,6 @@ public class SværtOrd extends ord{
         this.muligeOrd.add("flyveselskab");
         this.muligeOrd.add("grundspekulant");
     }
-    public ArrayList<String> getOrd()  {
-        return this.muligeOrd;
-    }
 
     }
 

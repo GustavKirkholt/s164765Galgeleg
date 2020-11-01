@@ -3,7 +3,6 @@ package com.example.galgeleg;
 public class OrdFactory {
 
     public ord lavOrd (String nytOrd){
-        ord gætOrd = null;
 
         if(nytOrd.equals("Nemt")){
             return new NemtOrd();

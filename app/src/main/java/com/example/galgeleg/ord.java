@@ -1,10 +1,12 @@
 package com.example.galgeleg;
 
+import java.util.ArrayList;
+
 public abstract class ord {
 
-    private String ordet;
+    ArrayList<String> ordet = new ArrayList();
 
-    public String getOrdet(){
+    public ArrayList<String> getOrdet() {
         return ordet;
     }
 }

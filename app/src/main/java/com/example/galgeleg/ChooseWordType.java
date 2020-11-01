@@ -12,6 +12,7 @@ public class ChooseWordType extends AppCompatActivity implements View.OnClickLis
     Button knap1;
     Button knap2;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,6 +23,7 @@ public class ChooseWordType extends AppCompatActivity implements View.OnClickLis
 
         knap1.setOnClickListener(this);
         knap2.setOnClickListener(this);
+
     }
 
     @Override

@@ -19,38 +19,26 @@ public class GalgeLogik {
     private boolean sidsteBogstavVarKorrekt;
     private boolean spilletErVundet;
     private boolean spilletErTabt;
-    public String valgtSværhed;
 
     public GalgeLogik() {
-        this.muligeOrd = <OrdFactory>.getOrd();
         OrdFactory ordFactory = new OrdFactory();
         ord sværtOrd = ordFactory.lavOrd("Svært");
         ord nemtOrd = ordFactory.lavOrd("Nemt");
-        this.muligeOrd = <OrdFactory>.getOrd();
-        this.muligeOrd.add();
-        this.muligeOrd.add(sværtOrd);
-        this.muligeOrd.add("");
-        this.muligeOrd.add("bil");
-        this.muligeOrd.add("computer");
-        this.muligeOrd.add("programmering");
-        this.muligeOrd.add("motorvej");
-        this.muligeOrd.add("busrute");
-        this.muligeOrd.add("gangsti");
-        this.muligeOrd.add("skovsnegl");
-        this.muligeOrd.add("solsort");
-        this.muligeOrd.add("tyve");
+        this.muligeOrd = (nemtOrd).getOrdet();
+        this.muligeOrd = (sværtOrd).getOrdet();
+        this.valgtSværhed(ordFactory.toString());
 
         this.startNytSpil();
     }
 
     public void valgtSværhed(String sværhedsgrad) {
         if (sværhedsgrad.equals("nemt")) {
-            this.muligeOrd = (new NemtOrd()).getOrd();
+           this.muligeOrd = (new NemtOrd()).getOrdet();
         } else if (sværhedsgrad.equals("svært")) {
-            this.muligeOrd = (new SværtOrd()).getOrd();
+            this.muligeOrd = (new SværtOrd()).getOrdet();
         }
     }
-    }
+
 
     public ArrayList<String> getBrugteBogstaver() {
         return this.brugteBogstaver;

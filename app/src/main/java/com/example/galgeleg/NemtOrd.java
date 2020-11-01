@@ -15,7 +15,5 @@ public class NemtOrd extends ord {
         this.muligeOrd.add("skovsnegl");
         this.muligeOrd.add("solsort");
         this.muligeOrd.add("tyve");
-    } public ArrayList<String> getOrd()  {
-        return this.muligeOrd;
     }
 }
