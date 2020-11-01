@@ -21,6 +21,7 @@ public class GalgeLogik {
     private boolean spilletErTabt;
 
     public GalgeLogik() {
+        OrdFactory ordFactory = new OrdFactory();
         this.muligeOrd.add("bil");
         this.muligeOrd.add("computer");
         this.muligeOrd.add("programmering");
@@ -30,6 +31,7 @@ public class GalgeLogik {
         this.muligeOrd.add("skovsnegl");
         this.muligeOrd.add("solsort");
         this.muligeOrd.add("tyve");
+
         this.startNytSpil();
     }
 

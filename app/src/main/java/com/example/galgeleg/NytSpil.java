@@ -17,34 +17,31 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-public class NytSpil extends AppCompatActivity implements View.OnClickListener, View.OnTouchListener, Observer, Subject{
+public class NytSpil extends AppCompatActivity implements View.OnClickListener, View.OnTouchListener {
 
     //Variabler
     TextView txwordToBeGuessed;
     EditText userInput;
     TextView nameOfUser;
     TextView txLettersTried;
-    ImageView hangMan; //Galjen
+    ImageView hangMan;
     int forkerteBogstaver;
     Button guess;
     Button reset;
     String ordetSynligt;
     String heleOrdet;
     GalgeLogik logik;
-    Boolean erSpilletVundet;
 
-
-    //Nogle animationer
-    Animation rotateAnimation;
-    Animation scaleAnimation;
-    Animation scaleAndRotateAnimation;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_nyt_spil);
 
-        this.logik = new GalgeLogik();
+
+        this.logik = new GalgeLogik(); //Her instantierer jeg et nyt objekt af den udleverede galgelogik.
+
+        //Herunder indsætter jeg mine views
 
         guess = findViewById(R.id.guessLetter);
         reset = findViewById(R.id.reset);
@@ -54,21 +51,30 @@ public class NytSpil extends AppCompatActivity implements View.OnClickListener, 
         txLettersTried = findViewById(R.id.lettersUsed);
         hangMan = findViewById(R.id.gallowStart);
 
+        //Herunder sætter jeg OnClickListeners på mine knapper
+
         guess.setOnClickListener(this);
         reset.setOnClickListener(this);
         userInput.setOnTouchListener(this);
+
+        //Herunder kalder jeg getSynligtOrd metoden fra galgelogik, sætter den som en variabel og sætter mit view til det
 
         ordetSynligt = logik.getSynligtOrd();
         TextView tv1 = findViewById(R.id.wordToGuess);
         tv1.setText(ordetSynligt);
 
+        //Herunder kalder jeg gettOrdet metoden fra galgelogik, sætter den som en variabel og sætter mit view til det.
+
         heleOrdet = logik.getOrdet();
+
+        //Herunder bruger jeg SharedPreferences til at hente brugernavnet fra mit ChooseUserName_frag og sætter viewet til det.
 
         String username = PreferenceManager.getDefaultSharedPreferences(this).getString("Brugernavn", "defaultStringIfNothingFound");
         TextView tv2 = findViewById(R.id.userName);
-        tv2.setText(username +"'s galgelegspil");
+        tv2.setText(username + "'s galgelegspil");
 
     }
+
     @Override
     public void onClick(View ButtonClick) {
         if (ButtonClick == guess) {
@@ -77,6 +83,9 @@ public class NytSpil extends AppCompatActivity implements View.OnClickListener, 
             TextView tv1 = findViewById(R.id.wordToGuess);
             tv1.setText(ordetSynligt);
             this.changeImage();
+            //update();
+
+            //Herunder tjekker jeg om det synlige ord indeholder " _ ", hvis det ikke gør er ordet gættet og spillet er vundet.
 
             if (!ordetSynligt.contains(" _ ")) {
 
@@ -102,74 +111,52 @@ public class NytSpil extends AppCompatActivity implements View.OnClickListener, 
         }
     }
 
-    public void changeImage(){
+    //Denne switch case bruges til at ændre billedet i spillet ud fra hvor mange forkerte bogstaver brugeren har gættet.
+    public void changeImage() {
         forkerteBogstaver = logik.getAntalForkerteBogstaver();
-        switch (forkerteBogstaver){
+        switch (forkerteBogstaver) {
 
-            case 1: forkerteBogstaver = 1;
-                    ImageView iv = findViewById(R.id.gallowStart);
-                    iv.setImageResource(R.drawable.forkert1);
-                    break;
-            case 2: forkerteBogstaver = 2;
-                    ImageView iv2 = findViewById(R.id.gallowStart);
-                    iv2.setImageResource(R.drawable.forkert2);
-                    break;
-            case 3: forkerteBogstaver = 3;
-                    ImageView iv3 = findViewById(R.id.gallowStart);
-                    iv3.setImageResource(R.drawable.forkert3);
-                    break;
-            case 4: forkerteBogstaver = 4;
-                    ImageView iv4 = findViewById(R.id.gallowStart);
-                    iv4.setImageResource(R.drawable.forkert4);
-                    break;
-            case 5: forkerteBogstaver = 5;
-                    ImageView iv5 = findViewById(R.id.gallowStart);
-                    iv5.setImageResource(R.drawable.forkert5);
-                    break;
-            case 6: forkerteBogstaver = 6;
-                    ImageView iv6 = findViewById(R.id.gallowStart);
-                    iv6.setImageResource(R.drawable.forkert6);
-                    Intent i = new Intent(this, DuHarTabt.class);
-                    startActivity(i);
-                    break;
+            case 1:
+                forkerteBogstaver = 1;
+                ImageView iv = findViewById(R.id.gallowStart);
+                iv.setImageResource(R.drawable.forkert1);
+                break;
+            case 2:
+                forkerteBogstaver = 2;
+                ImageView iv2 = findViewById(R.id.gallowStart);
+                iv2.setImageResource(R.drawable.forkert2);
+                break;
+            case 3:
+                forkerteBogstaver = 3;
+                ImageView iv3 = findViewById(R.id.gallowStart);
+                iv3.setImageResource(R.drawable.forkert3);
+                break;
+            case 4:
+                forkerteBogstaver = 4;
+                ImageView iv4 = findViewById(R.id.gallowStart);
+                iv4.setImageResource(R.drawable.forkert4);
+                break;
+            case 5:
+                forkerteBogstaver = 5;
+                ImageView iv5 = findViewById(R.id.gallowStart);
+                iv5.setImageResource(R.drawable.forkert5);
+                break;
+            case 6:
+                forkerteBogstaver = 6;
+                ImageView iv6 = findViewById(R.id.gallowStart);
+                iv6.setImageResource(R.drawable.forkert6);
+                Intent i = new Intent(this, DuHarTabt.class);
+                startActivity(i);
+                break;
         }
     }
 
     @Override
     public boolean onTouch(View v, MotionEvent event) {
-        if (v == userInput){
+        if (v == userInput) {
             userInput.setText("");
         }
         return false;
     }
 
-    @Override
-    public void update() {
-
-    }
-
-    @Override
-    public void setSubject(Subject sub) {
-
-    }
-
-    @Override
-    public void register(java.util.Observer obj) {
-
-    }
-
-    @Override
-    public void unregister(java.util.Observer obj) {
-
-    }
-
-    @Override
-    public void notifyObservers() {
-
-    }
-
-    @Override
-    public Object getUpdate(java.util.Observer obj) {
-        return null;
-    }
 }
