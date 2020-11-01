@@ -22,10 +22,12 @@ public class GalgeLogik {
     public String valgtSværhed;
 
     public GalgeLogik() {
+        this.muligeOrd = <OrdFactory>.getOrd();
         OrdFactory ordFactory = new OrdFactory();
         ord sværtOrd = ordFactory.lavOrd("Svært");
         ord nemtOrd = ordFactory.lavOrd("Nemt");
-        this.muligeOrd.add(nemtOrd);
+        this.muligeOrd = <OrdFactory>.getOrd();
+        this.muligeOrd.add();
         this.muligeOrd.add(sværtOrd);
         this.muligeOrd.add("");
         this.muligeOrd.add("bil");
@@ -41,7 +43,13 @@ public class GalgeLogik {
         this.startNytSpil();
     }
 
-    public static void valgtSværhed(String nemt) {
+    public void valgtSværhed(String sværhedsgrad) {
+        if (sværhedsgrad.equals("nemt")) {
+            this.muligeOrd = (new NemtOrd()).getOrd();
+        } else if (sværhedsgrad.equals("svært")) {
+            this.muligeOrd = (new SværtOrd()).getOrd();
+        }
+    }
     }
 
     public ArrayList<String> getBrugteBogstaver() {
