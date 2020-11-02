@@ -63,10 +63,9 @@ public class GalgeLogik {
         this.antalForkerteBogstaver = 0;
         this.spilletErVundet = false;
         this.spilletErTabt = false;
-        if (this.muligeOrd.isEmpty()) {
-            throw new IllegalStateException("Listen over mulige ord er tom!");
+        if (this.ordet==null) {
+            throw new IllegalStateException("Der er ikke valgt et ord");
         } else {
-            this.ordet = (String)this.muligeOrd.get((new Random()).nextInt(this.muligeOrd.size()));
             System.out.println("Nyt spil - det skjulte ord er: " + this.ordet);
             this.opdaterSynligtOrd();
         }
