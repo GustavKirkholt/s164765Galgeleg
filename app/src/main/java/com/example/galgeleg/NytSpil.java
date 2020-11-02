@@ -73,7 +73,7 @@ public class NytSpil extends AppCompatActivity implements View.OnClickListener, 
         TextView tv2 = findViewById(R.id.userName);
         tv2.setText(username + "'s galgelegspil");
 
-        logik.valgtSværhed();
+        //logik.valgtSværhed();
 
     }
 

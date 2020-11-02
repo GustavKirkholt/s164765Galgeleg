@@ -1,4 +1,4 @@
-package com.example.views.galgeleg;
+package com.example.galgeleg;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.app.Fragment;
@@ -13,6 +13,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+
+import com.example.galgeleg.R;
 
 public class ChooseUsername_frag extends Fragment implements View.OnClickListener{
     private View rod;
