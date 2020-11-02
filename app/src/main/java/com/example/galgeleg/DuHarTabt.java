@@ -26,6 +26,7 @@ public class DuHarTabt extends AppCompatActivity implements View.OnClickListener
 
         knap.setOnClickListener(this);
 
+
         String ordet = PreferenceManager.getDefaultSharedPreferences(this).getString("Ordet", "defaultStringIfNothingFound");
         TextView tv = findViewById(R.id.ordetVarTabt);
         tv.setText("ordet du skulle gætte var: " + ordet);
