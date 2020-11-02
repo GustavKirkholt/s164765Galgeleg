@@ -31,14 +31,6 @@ public class GalgeLogik {
         this.startNytSpil();
     }
 
-    public void valgtSværhed(String sværhedsgrad) {
-        if (sværhedsgrad.equals("nemt")) {
-           this.muligeOrd = (new NemmeOrd()).getOrdet();
-        } else if (sværhedsgrad.equals("svært")) {
-            this.muligeOrd = (new SværeOrd()).getOrdet();
-        }
-    }
-
 
     public ArrayList<String> getBrugteBogstaver() {
         return this.brugteBogstaver;
