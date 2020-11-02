@@ -26,11 +26,12 @@ public class GalgeLogik {
         ordListe nemtOrd = ordFactory.lavOrd("Nemt");
         this.muligeOrd = (nemtOrd).getOrdet();
         this.muligeOrd = (sværtOrd).getOrdet();
-        this.valgtSværhed(ordFactory.toString());
+
 
         this.startNytSpil();
     }
 
+    public void setOrd(String ordet){ this.ordet = ordet;}
 
     public ArrayList<String> getBrugteBogstaver() {
         return this.brugteBogstaver;

@@ -31,13 +31,13 @@ public class ChooseWordType extends AppCompatActivity implements View.OnClickLis
         if(ClickButton == knap1){
 
             Intent i = new Intent(this, NytSpil.class);
-            i.putExtra("Nemt", (new NemmeOrd()).getOrdet());
+            i.putExtra("ord", (new NemmeOrd()).getOrdet());
             startActivity(i);
 
         } else if (ClickButton == knap2){
 
             Intent i = new Intent(this, NytSpil.class);
-            i.putExtra("Svært", (new SværeOrd()).getOrdet());
+            i.putExtra("ord", (new SværeOrd()).getOrdet());
             startActivity(i);
 
 
