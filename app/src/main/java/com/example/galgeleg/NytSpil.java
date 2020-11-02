@@ -39,6 +39,7 @@ public class NytSpil extends AppCompatActivity implements View.OnClickListener, 
         setContentView(R.layout.activity_nyt_spil);
 
         String ord = getIntent().getStringExtra("ord");
+        logik.setOrd(ord);
 
         this.logik = new GalgeLogik(); //Her instantierer jeg et nyt objekt af den udleverede galgelogik.
 
