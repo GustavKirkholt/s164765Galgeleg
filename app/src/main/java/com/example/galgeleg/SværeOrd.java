@@ -3,7 +3,7 @@ package com.example.galgeleg;
 import java.util.ArrayList;
 
 public class SværeOrd extends ordListe{
-    ArrayList<String> muligeOrd = new ArrayList();
+    ArrayList<String> muligeOrd;
 
     public SværeOrd(){
         this.muligeOrd.add("adjungere");
