@@ -21,9 +21,9 @@ public class GalgeLogik {
     private boolean spilletErTabt;
 
     public GalgeLogik() {
-        OrdFactory ordFactory = new OrdFactory();
-        ord sværtOrd = ordFactory.lavOrd("Svært");
-        ord nemtOrd = ordFactory.lavOrd("Nemt");
+        OrdListeFactory ordFactory = new OrdListeFactory();
+        ordListe sværtOrd = ordFactory.lavOrd("Svært");
+        ordListe nemtOrd = ordFactory.lavOrd("Nemt");
         this.muligeOrd = (nemtOrd).getOrdet();
         this.muligeOrd = (sværtOrd).getOrdet();
         this.valgtSværhed(ordFactory.toString());
@@ -33,9 +33,9 @@ public class GalgeLogik {
 
     public void valgtSværhed(String sværhedsgrad) {
         if (sværhedsgrad.equals("nemt")) {
-           this.muligeOrd = (new NemtOrd()).getOrdet();
+           this.muligeOrd = (new NemmeOrd()).getOrdet();
         } else if (sværhedsgrad.equals("svært")) {
-            this.muligeOrd = (new SværtOrd()).getOrdet();
+            this.muligeOrd = (new SværeOrd()).getOrdet();
         }
     }
 

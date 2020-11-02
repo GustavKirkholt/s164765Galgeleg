@@ -1,6 +1,6 @@
 package com.example.galgeleg;
 
-public class OrdFactory {
+public class OrdListeFactory {
 
     public ordListe lavOrd (String nytOrd){
 
