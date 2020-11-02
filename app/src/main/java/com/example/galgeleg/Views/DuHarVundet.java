@@ -29,7 +29,7 @@ public class DuHarVundet extends AppCompatActivity implements View.OnClickListen
 
         String ordet = PreferenceManager.getDefaultSharedPreferences(this).getString("Ordet", "defaultStringIfNothingFound");
         TextView tv = findViewById(R.id.ordetVarVundet);
-        tv.setText("ordet du skulle gætte var: " + ordet);
+        tv.setText("Ordet du skulle gætte var: " + ordet);
     }
 
     @Override
