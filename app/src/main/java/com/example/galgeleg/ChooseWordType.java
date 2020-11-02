@@ -30,16 +30,14 @@ public class ChooseWordType extends AppCompatActivity implements View.OnClickLis
     public void onClick(View ClickButton) {
         if(ClickButton == knap1){
 
-            GalgeLogik.valgtSværhed("Nemt");
-
             Intent i = new Intent(this, NytSpil.class);
+            i.putExtra("Nemt", (new NemmeOrd()).getOrdet());
             startActivity(i);
 
         } else if (ClickButton == knap2){
 
-            GalgeLogik.valgtSværhed("Svært");
-
             Intent i = new Intent(this, NytSpil.class);
+            i.putExtra("Svært", (new SværeOrd()).getOrdet());
             startActivity(i);
 
 
