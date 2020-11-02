@@ -2,10 +2,10 @@ package com.example.galgeleg;
 
 import java.util.ArrayList;
 
-public class SværtOrd extends ord{
+public class SværeOrd extends ordListe{
     ArrayList<String> muligeOrd = new ArrayList();
 
-    public SværtOrd(){
+    public SværeOrd(){
         this.muligeOrd.add("adjungere");
         this.muligeOrd.add("aeronautisk");
         this.muligeOrd.add("ambulatorisk");
@@ -17,6 +17,6 @@ public class SværtOrd extends ord{
         this.muligeOrd.add("grundspekulant");
     }
 
-    }
+}
 
 

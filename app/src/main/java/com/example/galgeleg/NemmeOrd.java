@@ -2,10 +2,10 @@ package com.example.galgeleg;
 
 import java.util.ArrayList;
 
-public class NemtOrd extends ord {
+public class NemmeOrd extends ordListe {
     ArrayList<String> muligeOrd = new ArrayList();
 
-    public NemtOrd(){
+    public NemmeOrd(){
         this.muligeOrd.add("bil");
         this.muligeOrd.add("computer");
         this.muligeOrd.add("programmering");
@@ -17,3 +17,4 @@ public class NemtOrd extends ord {
         this.muligeOrd.add("tyve");
     }
 }
+
