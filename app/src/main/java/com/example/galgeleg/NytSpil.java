@@ -42,6 +42,7 @@ public class NytSpil extends AppCompatActivity implements View.OnClickListener, 
         logik.setOrd(ord);
 
         this.logik = new GalgeLogik(); //Her instantierer jeg et nyt objekt af den udleverede galgelogik.
+        logik.startNytSpil();
 
 
         //Herunder indsætter jeg mine views

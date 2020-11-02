@@ -21,17 +21,10 @@ public class GalgeLogik {
     private boolean spilletErTabt;
 
     public GalgeLogik() {
-        OrdListeFactory ordFactory = new OrdListeFactory();
-        ordListe sværtOrd = ordFactory.lavOrd("Svært");
-        ordListe nemtOrd = ordFactory.lavOrd("Nemt");
-        this.muligeOrd = (nemtOrd).getOrdet();
-        this.muligeOrd = (sværtOrd).getOrdet();
 
-
-        this.startNytSpil();
     }
 
-    public void setOrd(String ordet){ this.ordet = ordet;}
+    public void setOrd(String ordet) { this.ordet = ordet;}
 
     public ArrayList<String> getBrugteBogstaver() {
         return this.brugteBogstaver;
