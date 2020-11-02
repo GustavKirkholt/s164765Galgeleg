@@ -3,18 +3,17 @@ package com.example.galgeleg;
 import java.util.ArrayList;
 
 public class SværeOrd extends ordListe{
-    ArrayList<String> muligeOrd;
 
     public SværeOrd(){
-        this.muligeOrd.add("adjungere");
-        this.muligeOrd.add("aeronautisk");
-        this.muligeOrd.add("ambulatorisk");
-        this.muligeOrd.add("bessermachen");
-        this.muligeOrd.add("demiautomatisk");
-        this.muligeOrd.add("deodorisere");
-        this.muligeOrd.add("finanskasse");
-        this.muligeOrd.add("flyveselskab");
-        this.muligeOrd.add("grundspekulant");
+        this.ordListe.add("adjungere");
+        this.ordListe.add("aeronautisk");
+        this.ordListe.add("ambulatorisk");
+        this.ordListe.add("bessermachen");
+        this.ordListe.add("demiautomatisk");
+        this.ordListe.add("deodorisere");
+        this.ordListe.add("finanskasse");
+        this.ordListe.add("flyveselskab");
+        this.ordListe.add("grundspekulant");
     }
 
 }
