@@ -1,21 +1,22 @@
-package com.example.galgeleg;
+package com.example.galgeleg.Views;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.media.Image;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.animation.Animation;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import java.util.ArrayList;
+import com.example.galgeleg.Model.GalgeLogik;
+import com.example.galgeleg.R;
+import com.example.galgeleg.Views.DuHarTabt;
+import com.example.galgeleg.Views.DuHarVundet;
 
 public class NytSpil extends AppCompatActivity implements View.OnClickListener, View.OnTouchListener {
 

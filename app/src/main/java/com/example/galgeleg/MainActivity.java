@@ -7,6 +7,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.galgeleg.Views.ChooseUsername_frag;
+import com.example.galgeleg.Views.HighScore;
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     Button knap;

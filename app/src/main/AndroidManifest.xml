@@ -9,12 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.GalgeLeg">
-        <activity android:name=".ChooseWordType"></activity>
-        <activity android:name=".HighScore" />
-        <activity android:name=".ChooseUsername_frag" />
-        <activity android:name=".DuHarTabt" />
-        <activity android:name=".DuHarVundet" />
-        <activity android:name=".NytSpil" />
+        <activity android:name=".Views.ChooseWordType"></activity>
+        <activity android:name=".Views.HighScore" />
+        <activity android:name=".Views.ChooseUsername_frag" />
+        <activity android:name=".Views.DuHarTabt" />
+        <activity android:name=".Views.DuHarVundet" />
+        <activity android:name=".Views.NytSpil" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

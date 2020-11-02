@@ -1,4 +1,4 @@
-package com.example.galgeleg;
+package com.example.galgeleg.Model;
 
 
 import java.io.BufferedReader;
@@ -8,7 +8,6 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
-import java.util.Random;
 
 public class GalgeLogik {
     ArrayList<String> muligeOrd;

@@ -7,7 +7,7 @@
     android:background="#D3D3D3"
     android:clickable="true"
     android:elevation="30dp"
-    tools:context=".ChooseUsername_frag">
+    tools:context=".Views.ChooseUsername_frag">
 
     <EditText
         android:id="@+id/brugerNavn"

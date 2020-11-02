@@ -1,4 +1,4 @@
-package com.example.galgeleg;
+package com.example.galgeleg.Views;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,6 +6,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+
+import com.example.galgeleg.NemmeOrd;
+import com.example.galgeleg.R;
+import com.example.galgeleg.SværeOrd;
 
 public class ChooseWordType extends AppCompatActivity implements View.OnClickListener{
 
