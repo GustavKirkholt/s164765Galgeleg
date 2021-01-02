@@ -79,9 +79,6 @@ public class NytSpil extends AppCompatActivity implements View.OnClickListener, 
         TextView tv2 = findViewById(R.id.userName);
         tv2.setText(username + "'s galgelegspil");
 
-        SharedPreferences preferencesbogstaver = PreferenceManager.getDefaultSharedPreferences(this);
-        preferencesbogstaver.edit().putInt("Score", this.forkerteBogstaver).commit();
-
         SharedPreferences preferencesord = PreferenceManager.getDefaultSharedPreferences(this);
         preferencesord.edit().putString("Ordet", this.heleOrdet).commit();
 
@@ -101,6 +98,11 @@ public class NytSpil extends AppCompatActivity implements View.OnClickListener, 
             //Herunder tjekker jeg om det synlige ord indeholder " _ ", hvis det ikke gør er ordet gættet og spillet er vundet.
 
             if (!ordetSynligt.contains(" _ ")) {
+
+                forkerteBogstaver = logik.getAntalForkerteBogstaver();
+
+                SharedPreferences preferencesbogstaver = PreferenceManager.getDefaultSharedPreferences(this);
+                preferencesbogstaver.edit().putInt("Score", this.forkerteBogstaver).commit();
 
                 Intent i = new Intent(this, DuHarVundet.class);
                 finishAffinity();
