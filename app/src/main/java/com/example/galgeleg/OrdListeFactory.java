@@ -1,8 +1,10 @@
 package com.example.galgeleg;
 
+import java.io.IOException;
+
 public class OrdListeFactory {
 
-    public ordListe lavOrd (String nytOrd){
+    public ordListe lavOrd (String nytOrd) throws IOException {
 
         if(nytOrd.equals("Nemt")){
             return new NemmeOrd();
