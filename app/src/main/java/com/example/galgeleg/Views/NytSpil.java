@@ -103,6 +103,7 @@ public class NytSpil extends AppCompatActivity implements View.OnClickListener, 
             if (!ordetSynligt.contains(" _ ")) {
 
                 Intent i = new Intent(this, DuHarVundet.class);
+                finishAffinity();
                 startActivity(i);
 
             }
@@ -153,6 +154,7 @@ public class NytSpil extends AppCompatActivity implements View.OnClickListener, 
                 ImageView iv6 = findViewById(R.id.gallowStart);
                 iv6.setImageResource(R.drawable.forkert6);
                 Intent i = new Intent(this, DuHarTabt.class);
+                finishAffinity();
                 startActivity(i);
                 break;
         }
