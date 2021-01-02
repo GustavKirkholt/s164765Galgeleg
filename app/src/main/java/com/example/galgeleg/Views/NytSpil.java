@@ -18,6 +18,8 @@ import com.example.galgeleg.R;
 import com.example.galgeleg.Views.DuHarTabt;
 import com.example.galgeleg.Views.DuHarVundet;
 
+import java.util.ArrayList;
+
 public class NytSpil extends AppCompatActivity implements View.OnClickListener, View.OnTouchListener {
 
     //Variabler
@@ -26,7 +28,8 @@ public class NytSpil extends AppCompatActivity implements View.OnClickListener, 
     TextView nameOfUser;
     TextView txLettersTried;
     ImageView hangMan;
-    int forkerteBogstaver;
+    int AntalforkerteBogstaver;
+    ArrayList<String> brugteBogstaver;
     Button guess;
     Button reset;
     String ordetSynligt;
@@ -69,6 +72,7 @@ public class NytSpil extends AppCompatActivity implements View.OnClickListener, 
         TextView tv1 = findViewById(R.id.wordToGuess);
         tv1.setText(ordetSynligt);
 
+
         //Herunder kalder jeg gettOrdet metoden fra galgelogik, sætter den som en variabel og sætter mit view til det.
 
         heleOrdet = logik.getOrdet();
@@ -76,8 +80,8 @@ public class NytSpil extends AppCompatActivity implements View.OnClickListener, 
         //Herunder bruger jeg SharedPreferences til at hente brugernavnet fra mit ChooseUserName_frag og sætter viewet til det.
 
         String username = PreferenceManager.getDefaultSharedPreferences(this).getString("Brugernavn", "defaultStringIfNothingFound");
-        TextView tv2 = findViewById(R.id.userName);
-        tv2.setText(username + "'s galgelegspil");
+        TextView tv3 = findViewById(R.id.userName);
+        tv3.setText(username + "'s galgelegspil");
 
 
     }
@@ -86,9 +90,15 @@ public class NytSpil extends AppCompatActivity implements View.OnClickListener, 
     public void onClick(View ButtonClick) {
         if (ButtonClick == guess) {
             this.logik.gætBogstav(userInput.getText().toString());
+
             ordetSynligt = logik.getSynligtOrd();
             TextView tv1 = findViewById(R.id.wordToGuess);
             tv1.setText(ordetSynligt);
+
+            brugteBogstaver = logik.getBrugteBogstaver();
+            TextView tv2 = findViewById(R.id.lettersUsed);
+            tv2.setText(brugteBogstaver.toString());
+
             this.changeImage();
             //update();
 
@@ -96,10 +106,10 @@ public class NytSpil extends AppCompatActivity implements View.OnClickListener, 
 
             if (!ordetSynligt.contains(" _ ")) {
 
-                forkerteBogstaver = logik.getAntalForkerteBogstaver();
+                AntalforkerteBogstaver = logik.getAntalForkerteBogstaver();
 
                 SharedPreferences preferencesbogstaver = PreferenceManager.getDefaultSharedPreferences(this);
-                preferencesbogstaver.edit().putInt("Score", this.forkerteBogstaver).commit();
+                preferencesbogstaver.edit().putInt("Score", this.AntalforkerteBogstaver).commit();
 
                 SharedPreferences preferencesord = PreferenceManager.getDefaultSharedPreferences(this);
                 preferencesord.edit().putString("Ordet", this.heleOrdet).commit();
@@ -123,36 +133,36 @@ public class NytSpil extends AppCompatActivity implements View.OnClickListener, 
 
     //Denne switch case bruges til at ændre billedet i spillet ud fra hvor mange forkerte bogstaver brugeren har gættet.
     public void changeImage() {
-        forkerteBogstaver = logik.getAntalForkerteBogstaver();
-        switch (forkerteBogstaver) {
+        AntalforkerteBogstaver = logik.getAntalForkerteBogstaver();
+        switch (AntalforkerteBogstaver) {
 
             case 1:
-                forkerteBogstaver = 1;
+                AntalforkerteBogstaver = 1;
                 ImageView iv = findViewById(R.id.gallowStart);
                 iv.setImageResource(R.drawable.forkert1);
                 break;
             case 2:
-                forkerteBogstaver = 2;
+                AntalforkerteBogstaver = 2;
                 ImageView iv2 = findViewById(R.id.gallowStart);
                 iv2.setImageResource(R.drawable.forkert2);
                 break;
             case 3:
-                forkerteBogstaver = 3;
+                AntalforkerteBogstaver = 3;
                 ImageView iv3 = findViewById(R.id.gallowStart);
                 iv3.setImageResource(R.drawable.forkert3);
                 break;
             case 4:
-                forkerteBogstaver = 4;
+                AntalforkerteBogstaver = 4;
                 ImageView iv4 = findViewById(R.id.gallowStart);
                 iv4.setImageResource(R.drawable.forkert4);
                 break;
             case 5:
-                forkerteBogstaver = 5;
+                AntalforkerteBogstaver = 5;
                 ImageView iv5 = findViewById(R.id.gallowStart);
                 iv5.setImageResource(R.drawable.forkert5);
                 break;
             case 6:
-                forkerteBogstaver = 6;
+                AntalforkerteBogstaver = 6;
                 ImageView iv6 = findViewById(R.id.gallowStart);
                 iv6.setImageResource(R.drawable.forkert6);
                 Intent i = new Intent(this, DuHarTabt.class);
