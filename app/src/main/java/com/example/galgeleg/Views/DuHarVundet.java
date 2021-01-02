@@ -3,11 +3,16 @@ package com.example.galgeleg.Views;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.media.AudioAttributes;
+import android.media.AudioManager;
+import android.media.MediaPlayer;
+import android.media.SoundPool;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.media.SoundPool.Builder;
 
 import com.example.galgeleg.MainActivity;
 import com.example.galgeleg.R;
@@ -17,10 +22,14 @@ public class DuHarVundet extends AppCompatActivity implements View.OnClickListen
     Button knap;
     TextView ordetVar;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_du_har_vundet);
+
+        MediaPlayer play = MediaPlayer.create(DuHarVundet.this, R.raw.applause2);
+        play.start();
 
         knap = findViewById(R.id.vundet_return);
         ordetVar = findViewById(R.id.ordetVarVundet);
@@ -38,5 +47,6 @@ public class DuHarVundet extends AppCompatActivity implements View.OnClickListen
             Intent i = new Intent(this, MainActivity.class);
             startActivity(i);
         }
+
     }
 }

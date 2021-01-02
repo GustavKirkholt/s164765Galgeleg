@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ComputableLiveData;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.view.View;
@@ -23,6 +24,9 @@ public class DuHarTabt extends AppCompatActivity implements View.OnClickListener
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_du_har_tabt);
+
+        MediaPlayer play = MediaPlayer.create(DuHarTabt.this, R.raw.boohiss);
+        play.start();
 
         knap = findViewById(R.id.return_tabt);
         ordetVar = findViewById(R.id.ordetVarTabt);
