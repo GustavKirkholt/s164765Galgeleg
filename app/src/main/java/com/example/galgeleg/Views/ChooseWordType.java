@@ -21,32 +21,29 @@ import com.example.galgeleg.SværeOrd;
 import java.util.ArrayList;
 
 
-public class ChooseWordType extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+public class ChooseWordType extends AppCompatActivity implements AdapterView.OnItemClickListener {
 
-    Spinner spinner;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_choose_word_type);
 
-        final ArrayList<String> valgmuligheder = new ArrayList<>();
-        valgmuligheder.add("Nemt");
-        valgmuligheder.add("Svært");
-        valgmuligheder.add("Hent fra DR");
+        final String[] valgmuligheder = {"Nemt", "Svært", "Hent Fra DR"};
 
+        ArrayAdapter adapter = new ArrayAdapter(this, R.layout.activity_choose_word_type, R.id.listeelement, valgmuligheder);
 
-        spinner = findViewById(R.id.spinner);
-        spinner.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, valgmuligheder));
+        ListView listView = new ListView(this);
+        listView.setOnItemClickListener(this);
+        listView.setAdapter(adapter);
 
-        spinner.setOnItemSelectedListener(this);
-
+        setContentView(listView);
 
     }
 
     @Override
-    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-        if (position == 0) {
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        if (position == 0){
             Intent i = new Intent(ChooseWordType.this, NytSpil.class);
             i.putExtra("ord", (new NemmeOrd()).getOrdet());
             startActivity(i);
@@ -57,10 +54,5 @@ public class ChooseWordType extends AppCompatActivity implements AdapterView.OnI
         } if (position == 2){
             //TODO Hente ord fra DR
         }
-    }
-
-    @Override
-    public void onNothingSelected(AdapterView<?> parent) {
-        return;
     }
 }

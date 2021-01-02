@@ -7,13 +7,14 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp"
+    android:focusable="false"
     android:gravity="center_horizontal"
     tools:context=".Views.ChooseWordType">
 
-    <Spinner
-        android:id="@+id/spinner"
+    <TextView
+        android:id="@+id/listeelement"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="150dp" />
-
+        android:layout_marginTop="200dp"
+        android:text="TextView" />
 </LinearLayout>
