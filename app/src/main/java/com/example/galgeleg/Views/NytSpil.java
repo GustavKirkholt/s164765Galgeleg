@@ -79,9 +79,6 @@ public class NytSpil extends AppCompatActivity implements View.OnClickListener, 
         TextView tv2 = findViewById(R.id.userName);
         tv2.setText(username + "'s galgelegspil");
 
-        SharedPreferences preferencesord = PreferenceManager.getDefaultSharedPreferences(this);
-        preferencesord.edit().putString("Ordet", this.heleOrdet).commit();
-
 
     }
 
@@ -103,6 +100,9 @@ public class NytSpil extends AppCompatActivity implements View.OnClickListener, 
 
                 SharedPreferences preferencesbogstaver = PreferenceManager.getDefaultSharedPreferences(this);
                 preferencesbogstaver.edit().putInt("Score", this.forkerteBogstaver).commit();
+
+                SharedPreferences preferencesord = PreferenceManager.getDefaultSharedPreferences(this);
+                preferencesord.edit().putString("Ordet", this.heleOrdet).commit();
 
                 Intent i = new Intent(this, DuHarVundet.class);
                 finishAffinity();
