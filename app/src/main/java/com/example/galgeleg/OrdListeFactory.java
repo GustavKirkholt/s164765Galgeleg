@@ -10,7 +10,9 @@ public class OrdListeFactory {
         } else if (nytOrd.equals("Svært")){
             return new SværeOrd();
 
-        } else return null;
+        } else if (nytOrd.equals("DR")) {
+            return new OrdDR();
+        }
+        return null;
     }
-
 }
