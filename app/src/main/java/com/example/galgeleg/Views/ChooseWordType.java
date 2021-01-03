@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.nfc.Tag;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -15,15 +17,15 @@ import android.widget.Spinner;
 
 import com.example.galgeleg.MainActivity;
 import com.example.galgeleg.NemmeOrd;
+import com.example.galgeleg.OrdDR;
 import com.example.galgeleg.R;
 import com.example.galgeleg.SværeOrd;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 
 public class ChooseWordType extends AppCompatActivity implements AdapterView.OnItemClickListener {
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,7 +54,9 @@ public class ChooseWordType extends AppCompatActivity implements AdapterView.OnI
             i.putExtra("ord", (new SværeOrd()).getOrdet());
             startActivity(i);
         } if (position == 2){
-            //TODO Hente ord fra DR
+            Intent i = new Intent(this, NytSpil.class);
+            i.putExtra("ord", (new OrdDR()).getOrdet());
+            startActivity(i);
         }
     }
 }

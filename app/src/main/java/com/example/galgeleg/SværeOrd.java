@@ -1,7 +1,5 @@
 package com.example.galgeleg;
 
-import java.util.ArrayList;
-
 public class SværeOrd extends ordListe{
 
     public SværeOrd(){
