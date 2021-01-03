@@ -2,37 +2,18 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/highscore"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Views.HighScore">
 
-    <TextView
-        android:id="@+id/highScore"
+    <Button
+        android:id="@+id/tilbagehighscore"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="HIGHSCORE"
-        tools:layout_editor_absoluteX="167dp"
-        tools:layout_editor_absoluteY="80dp" />
-
-    <TextView
-        android:id="@+id/listeelementUsername"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        tools:layout_editor_absoluteX="167dp"
-        tools:layout_editor_absoluteY="148dp" />
-
-    <TextView
-        android:id="@+id/listeelementOrd"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        tools:layout_editor_absoluteX="167dp"
-        tools:layout_editor_absoluteY="187dp" />
-
-    <TextView
-        android:id="@+id/listeelementScore"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView" />
+        android:layout_marginBottom="196dp"
+        android:text="Tilbage til start"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
