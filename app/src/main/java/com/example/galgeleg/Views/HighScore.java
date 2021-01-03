@@ -11,31 +11,36 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.GridView;
+import android.widget.ListView;
 
 import com.example.galgeleg.R;
 
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class HighScore extends AppCompatActivity implements R {
+public class HighScore extends AppCompatActivity implements {
 
-    private ArrayList<String> highscore = new ArrayList<>();
-    private SharedPreferences prefs;
-    MyRecipeListAdapter recyclerViewAdapter;
+    private ArrayList<String> usernames = new ArrayList<>();
+    private ArrayList<Integer> scores = new ArrayList<>();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_high_score);
 
-        prefs = PreferenceHelper.getApplicationPreferences(this);
-        updateListOfBrews();
+        String username = PreferenceManager.getDefaultSharedPreferences(this).getString("Brugernavn", "defaultStringIfNothingFound");
+        int score = PreferenceManager.getDefaultSharedPreferences(this).getInt("Score", 0);
 
-        RecyclerView listView = this.findViewById(R.id.myrecipes_List);
+        this.usernames.add(username);
+        this.scores.add(score);
+
+
+        RecyclerView listView = this.findViewById(R.id.highScore);
         listView.setLayoutManager(new LinearLayoutManager(this));
         listView.scrollToPosition(0);
 
-        recyclerViewAdapter = new MyRecipeListAdapter(brews, this);
+        recyclerViewAdapter = new MyRecipeListAdapter(usernames, scores, this);
 
         listView.setAdapter(recyclerViewAdapter);
 
