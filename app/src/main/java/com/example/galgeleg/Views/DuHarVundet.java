@@ -20,6 +20,7 @@ import com.example.galgeleg.R;
 public class DuHarVundet extends AppCompatActivity implements View.OnClickListener {
 
     Button knap;
+    Button knap2;
     TextView ordetVar;
 
 
@@ -32,9 +33,11 @@ public class DuHarVundet extends AppCompatActivity implements View.OnClickListen
         play.start();
 
         knap = findViewById(R.id.vundet_return);
+        knap2 = findViewById(R.id.button2);
         ordetVar = findViewById(R.id.ordetVarVundet);
 
         knap.setOnClickListener(this);
+        knap2.setOnClickListener(this);
 
         String ordet = PreferenceManager.getDefaultSharedPreferences(this).getString("Ordet", "defaultStringIfNothingFound");
         TextView tv = findViewById(R.id.ordetVarVundet);
@@ -45,6 +48,9 @@ public class DuHarVundet extends AppCompatActivity implements View.OnClickListen
     public void onClick(View ClickButton) {
         if (ClickButton == knap) {
             Intent i = new Intent(this, MainActivity.class);
+            startActivity(i);
+        } if(ClickButton == knap2){
+            Intent i = new Intent(this, HighScore.class);
             startActivity(i);
         }
 

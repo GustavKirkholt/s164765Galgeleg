@@ -36,7 +36,7 @@ public class HighScore extends AppCompatActivity {
         recyclerView = findViewById(R.id.recyclerView);
 
         String username = PreferenceManager.getDefaultSharedPreferences(this).getString("Brugernavn", "defaultStringIfNothingFound");
-        int score = PreferenceManager.getDefaultSharedPreferences(this).getInt("Score", 0);
+        int score = PreferenceManager.getDefaultSharedPreferences(this).getInt("Score", 1);
         String ordet = PreferenceManager.getDefaultSharedPreferences(this).getString("Ordet", "defaultStringIfNothingFound");
 
         this.usernames.add(username);
@@ -44,6 +44,9 @@ public class HighScore extends AppCompatActivity {
         this.scores.add(ordet);
 
         MyAdapter myAdapter = new MyAdapter(this, usernames, scores);
+        recyclerView.setAdapter(myAdapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
 
     }
 }
