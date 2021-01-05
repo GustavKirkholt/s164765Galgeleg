@@ -43,6 +43,7 @@ public class NytSpil extends AppCompatActivity implements View.OnClickListener, 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_nyt_spil);
 
+
         this.logik = new GalgeLogik(); //Her instantierer jeg et nyt objekt af den udleverede galgelogik.
 
         String ord = getIntent().getStringExtra("ord");
@@ -91,6 +92,8 @@ public class NytSpil extends AppCompatActivity implements View.OnClickListener, 
     public void onClick(View ButtonClick) {
         if (ButtonClick == guess) {
             this.logik.gætBogstav(userInput.getText().toString());
+
+            userInput.setText("");
 
             ordetSynligt = logik.getSynligtOrd();
             TextView tv1 = findViewById(R.id.wordToGuess);
