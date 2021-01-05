@@ -24,8 +24,9 @@ public class OrdDR extends ordListe {
         ordListe.addAll(new HashSet(Arrays.asList(data.split(" "))));
     });
 
-    public OrdDR() {
+    public OrdDR() throws InterruptedException {
 
         t1.start();
+        Thread.sleep(3000);
     }
 }

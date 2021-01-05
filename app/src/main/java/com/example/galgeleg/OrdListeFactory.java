@@ -2,7 +2,7 @@ package com.example.galgeleg;
 
 public class OrdListeFactory {
 
-    public ordListe lavOrd (String nytOrd) {
+    public ordListe lavOrd (String nytOrd) throws InterruptedException {
 
         if(nytOrd.equals("Nemt")){
             return new NemmeOrd();

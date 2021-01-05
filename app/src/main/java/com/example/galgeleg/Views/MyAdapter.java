@@ -32,7 +32,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
-            text1 = itemView.findViewById(R.id.userName);
+            text1 = itemView.findViewById(R.id.username);
             text2 = itemView.findViewById(R.id.score_ord);
         }
     }

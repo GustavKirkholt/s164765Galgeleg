@@ -55,7 +55,11 @@ public class ChooseWordType extends AppCompatActivity implements AdapterView.OnI
             startActivity(i);
         } if (position == 2){
             Intent i = new Intent(this, NytSpil.class);
-            i.putExtra("ord", (new OrdDR()).getOrdet());
+            try {
+                i.putExtra("ord", (new OrdDR()).getOrdet());
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
             startActivity(i);
         }
     }
