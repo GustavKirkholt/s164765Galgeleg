@@ -22,7 +22,7 @@ import java.util.Collections;
 
 //TODO Jeg ville gerne have indlæst mine highscores fra en json fil, så man kunne se highscores fra andre spil, men grundet tidspres nåede jeg ikke dette.
 
-public class HighScore extends AppCompatActivity {
+public class HighScore extends AppCompatActivity implements View.OnClickListener {
 
     Button tilbage;
     RecyclerView recyclerView;
@@ -37,6 +37,9 @@ public class HighScore extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_high_score);
+
+        tilbage = findViewById(R.id.tilbagehighscore);
+        tilbage.setOnClickListener(this);
 
         recyclerView = findViewById(R.id.recyclerView);
 
@@ -54,5 +57,13 @@ public class HighScore extends AppCompatActivity {
 
 
 
+    }
+
+    @Override
+    public void onClick(View ButtonClick) {
+        if(ButtonClick == tilbage){
+            Intent i = new Intent(this, MainActivity.class);
+            startActivity(i);
+        }
     }
 }

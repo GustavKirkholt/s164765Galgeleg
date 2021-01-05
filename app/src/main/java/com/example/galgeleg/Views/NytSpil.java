@@ -115,6 +115,7 @@ public class NytSpil extends AppCompatActivity implements View.OnClickListener, 
                 preferencesord.edit().putString("Ordet", this.heleOrdet).commit();
 
                 Intent i = new Intent(this, DuHarVundet.class);
+                finish();
                 startActivity(i);
 
             }
@@ -163,6 +164,7 @@ public class NytSpil extends AppCompatActivity implements View.OnClickListener, 
                 ImageView iv6 = findViewById(R.id.gallowStart);
                 iv6.setImageResource(R.drawable.forkert6);
                 Intent i = new Intent(this, DuHarTabt.class);
+                finish();
                 startActivity(i);
                 break;
         }
