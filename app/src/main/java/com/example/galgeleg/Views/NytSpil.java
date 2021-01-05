@@ -28,7 +28,7 @@ public class NytSpil extends AppCompatActivity implements View.OnClickListener, 
     TextView nameOfUser;
     TextView txLettersTried;
     ImageView hangMan;
-    int AntalforkerteBogstaver;
+    int Antalforsøg;
     ArrayList<String> brugteBogstaver;
     Button guess;
     Button reset;
@@ -106,10 +106,10 @@ public class NytSpil extends AppCompatActivity implements View.OnClickListener, 
 
             if (!ordetSynligt.contains(" _ ")) {
 
-                AntalforkerteBogstaver = logik.getAntalForkerteBogstaver();
+                Antalforsøg = logik.getAntalForsøg();
 
                 SharedPreferences preferencesbogstaver = PreferenceManager.getDefaultSharedPreferences(this);
-                preferencesbogstaver.edit().putInt("Score", this.AntalforkerteBogstaver).commit();
+                preferencesbogstaver.edit().putInt("Score", this.Antalforsøg).commit();
 
                 SharedPreferences preferencesord = PreferenceManager.getDefaultSharedPreferences(this);
                 preferencesord.edit().putString("Ordet", this.heleOrdet).commit();

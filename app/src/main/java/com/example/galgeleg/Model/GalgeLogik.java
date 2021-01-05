@@ -15,6 +15,7 @@ public class GalgeLogik {
     private ArrayList<String> brugteBogstaver = new ArrayList();
     private String synligtOrd;
     private int antalForkerteBogstaver;
+    private int antalForsøg;
     private boolean sidsteBogstavVarKorrekt;
     private boolean spilletErVundet;
     private boolean spilletErTabt;
@@ -40,6 +41,8 @@ public class GalgeLogik {
     public int getAntalForkerteBogstaver() {
         return this.antalForkerteBogstaver;
     }
+
+    public int getAntalForsøg(){return this.antalForsøg; }
 
     public boolean erSidsteBogstavKorrekt() {
         return this.sidsteBogstavVarKorrekt;
@@ -95,6 +98,7 @@ public class GalgeLogik {
                     if (this.ordet.contains(bogstav)) {
                         this.sidsteBogstavVarKorrekt = true;
                         System.out.println("Bogstavet var korrekt: " + bogstav);
+                        ++this.antalForsøg;
                     } else {
                         this.sidsteBogstavVarKorrekt = false;
                         System.out.println("Bogstavet var IKKE korrekt: " + bogstav);
