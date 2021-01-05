@@ -163,6 +163,10 @@ public class NytSpil extends AppCompatActivity implements View.OnClickListener, 
                 AntalforkerteBogstaver = 6;
                 ImageView iv6 = findViewById(R.id.gallowStart);
                 iv6.setImageResource(R.drawable.forkert6);
+
+                SharedPreferences preferencesord = PreferenceManager.getDefaultSharedPreferences(this);
+                preferencesord.edit().putString("Ordet", this.heleOrdet).commit();
+
                 Intent i = new Intent(this, DuHarTabt.class);
                 finish();
                 startActivity(i);
