@@ -27,6 +27,8 @@ public class HighScore extends AppCompatActivity {
 
     private ArrayList<String> usernames = new ArrayList<>();
     private ArrayList<String> scores = new ArrayList<>();
+    private ArrayList<String> ord = new ArrayList<>();
+
 
 
     @Override
@@ -42,9 +44,9 @@ public class HighScore extends AppCompatActivity {
 
         this.usernames.add(username);
         this.scores.add(String.valueOf(score));
-        this.scores.add(ordet);
+        this.ord.add(ordet);
 
-        MyAdapter myAdapter = new MyAdapter(this, usernames, scores);
+        MyAdapter myAdapter = new MyAdapter(this, usernames, scores, ord);
         recyclerView.setAdapter(myAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
