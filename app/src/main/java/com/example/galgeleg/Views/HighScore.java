@@ -32,6 +32,7 @@ public class HighScore extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_high_score);
 
         recyclerView = findViewById(R.id.recyclerView);
 
@@ -46,6 +47,7 @@ public class HighScore extends AppCompatActivity {
         MyAdapter myAdapter = new MyAdapter(this, usernames, scores);
         recyclerView.setAdapter(myAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
 
 
     }

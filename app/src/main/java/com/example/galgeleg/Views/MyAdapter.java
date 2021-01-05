@@ -48,7 +48,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull MyAdapter.MyViewHolder holder, int position) {
         holder.text1.setText(data1.get(position));
-        holder.text1.setText(data2.get(position));
+        holder.text2.setText(data2.get(position));
     }
 
 
