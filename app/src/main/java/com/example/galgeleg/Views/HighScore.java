@@ -20,6 +20,8 @@ import com.example.galgeleg.R;
 import java.util.ArrayList;
 import java.util.Collections;
 
+//TODO Jeg ville gerne have indlæst mine highscores fra en json fil, så man kunne se highscores fra andre spil, men grundet tidspres nåede jeg ikke dette.
+
 public class HighScore extends AppCompatActivity {
 
     Button tilbage;

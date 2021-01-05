@@ -20,12 +20,11 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
    ArrayList<String> data3;
    Context context;
 
-    public MyAdapter(HighScore ct, ArrayList<String> strings, ArrayList<String> usernames, ArrayList<String> scores, ArrayList<String> ord) {
+    public MyAdapter(HighScore ct, ArrayList<String> usernames, ArrayList<String> scores, ArrayList<String> ord) {
         context = ct;
         data1 = usernames;
         data2 = scores;
         data3 = ord;
-
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder{
