@@ -1,5 +1,7 @@
 package com.example.galgeleg;
 
+//Her er mulighederne for de svære ord
+
 public class SværeOrd extends ordListe{
 
     public SværeOrd(){

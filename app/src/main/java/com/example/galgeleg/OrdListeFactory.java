@@ -1,5 +1,7 @@
 package com.example.galgeleg;
 
+//Her styres hvilken ord type der vælges, ud fra brugerens valg.
+
 public class OrdListeFactory {
 
     public ordListe lavOrd (String nytOrd) throws InterruptedException {

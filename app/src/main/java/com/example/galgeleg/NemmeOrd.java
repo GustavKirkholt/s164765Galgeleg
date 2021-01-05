@@ -1,6 +1,8 @@
 package com.example.galgeleg;
 
 
+//Dette er de mulige ord hvis brugere vælger de nemme ord.
+
 public class NemmeOrd extends ordListe {
 
     public NemmeOrd(){

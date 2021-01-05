@@ -8,6 +8,8 @@ import java.util.Random;
 
 import static com.example.galgeleg.Model.GalgeLogik.hentUrl;
 
+//Her henter jeg ORD fra dr.dk og tilføjer dem som mulige ord til ordlisten.
+
 
 public class OrdDR extends ordListe {
 

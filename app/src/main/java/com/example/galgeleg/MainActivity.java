@@ -1,6 +1,7 @@
 package com.example.galgeleg;
 
 // Gustav Kirkholt s164765
+// Dette er mit første skærmbillede hvor der vælges mellem nyt spil eller highscore
 
 import androidx.appcompat.app.AppCompatActivity;
 

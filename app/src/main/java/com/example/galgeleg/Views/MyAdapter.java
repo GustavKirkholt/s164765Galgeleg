@@ -13,6 +13,8 @@ import com.example.galgeleg.R;
 
 import java.util.ArrayList;
 
+//Dette er min reyclerview adapter
+
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
    ArrayList<String> data1;

@@ -3,6 +3,8 @@ package com.example.galgeleg;
 import java.util.ArrayList;
 import java.util.Random;
 
+//Her vælger jeg et tilfældigt ord fra listen af ord.
+
 
 public abstract class ordListe {
 
