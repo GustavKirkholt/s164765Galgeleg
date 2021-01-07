@@ -14,6 +14,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.media.SoundPool.Builder;
 
+import com.airbnb.lottie.LottieAnimationView;
 import com.example.galgeleg.MainActivity;
 import com.example.galgeleg.R;
 
@@ -22,12 +23,15 @@ public class DuHarVundet extends AppCompatActivity implements View.OnClickListen
     Button knap;
     Button knap2;
     TextView ordetVar;
+    LottieAnimationView lottieAnimationView;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_du_har_vundet);
+
+        lottieAnimationView = findViewById(R.id.animationWin);
 
         MediaPlayer play = MediaPlayer.create(DuHarVundet.this, R.raw.applause2);
         play.start();
